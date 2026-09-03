@@ -13,3 +13,7 @@ for person in data['people']:
     if person['name'] not in all_crafts:
         all_people.append(person['name'])
 print(all_people)
+counter = 0
+for name in data['people']:
+    counter += 1
+print(counter)
