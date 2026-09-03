@@ -2,4 +2,14 @@ import requests
 url = "http://api.open-notify.org/astros.json"
 response = requests.get(url)
 data = response.json()
-print(data)
+# print(data)
+all_crafts = []
+all_people = []
+for person in data['people']:
+    if person['craft'] not in all_crafts:
+        all_crafts.append(person['craft'])
+print(all_crafts)
+for person in data['people']:
+    if person['name'] not in all_crafts:
+        all_people.append(person['name'])
+print(all_people)
