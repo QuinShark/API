@@ -1,6 +1,7 @@
-from urllib import request, urlopen
+from urllib.request import Request, urlopen
 
-request = request('https://api.lyrics.ovh/v1/artist/title')
+request = Request('https://api.lyrics.ovh/v1/artist/title')
 
 response_body = urlopen(request).read()
 print (response_body)
+
