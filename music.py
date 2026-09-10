@@ -1,6 +1,18 @@
-from urllib.request import Request, urlopen
+import requests
+# from requests.utils import quote
 
-request = Request('https://api.lyrics.ovh/v1/artist/title')
+artist = input("Give me an Artist:")
+song = input("now give me a song: ")
+lyrics = requests.get(f'https://api.lyrics.ovh/v1/{artist}/{song}')
+
+lyrics = lyrics.json()
+# lyric = Request.get(f'https://api.lyrics.ovh/v1/{artist}/{song}')
+print(f"Here are the lyrics for {song}:")
+print(lyrics["lyrics"])
+# print(request)
+# 
+# NO WHERE CLOSE TO DONE. 
+
 
 # # parameters. still so very confused. 
 # # artist:Name of the artist
