@@ -7,10 +7,13 @@ lyrics = requests.get(f'https://api.lyrics.ovh/v1/{artist}/{song}')
 
 lyrics = lyrics.json()
 # lyric = Request.get(f'https://api.lyrics.ovh/v1/{artist}/{song}')
-print(f"Here are the lyrics for {song}:")
-print(lyrics["lyrics"])
+if 'lyrics' not in lyrics:
+    print("Can't find those lyrics.")
+else:
+    print(f"Here are the lyrics for {song}:")
+    print(lyrics["lyrics"])
 # print(request)
-# 
+# Ask for artist and then print all their songs for the 
 # NO WHERE CLOSE TO DONE. 
 
 
